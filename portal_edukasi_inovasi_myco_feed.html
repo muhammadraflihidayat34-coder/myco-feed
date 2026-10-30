@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCO FEED | Portal Edukasi & Inovasi Bioplastik Miselium</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#f2f7f1',
+                            100: '#e1ede0',
+                            200: '#c2dcc0',
+                            500: '#52824c',
+                            600: '#3a6635',
+                            700: '#2D5A27', // Dark Forest Green
+                            800: '#21431d',
+                            900: '#162e14',
+                        },
+                        warm: {
+                            50: '#FDFBF7', // Cream Warm Beige
+                            100: '#F7F3EA',
+                            200: '#EFE7D5',
+                            300: '#E3D6B8',
+                        },
+                        earth: {
+                            500: '#8C6D53',
+                            600: '#6E523C',
+                            700: '#4A3E3D', // Soil Brown
+                            800: '#362C2C',
+                        },
+                        leaf: {
+                            400: '#A3BE90',
+                            500: '#8FA87B', // Soft Leaf
+                            600: '#758D62',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar & certificate print styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8FA87B;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2D5A27;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-certificate, #printable-certificate * {
+                visibility: visible;
+            }
+            #printable-certificate {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+                box-shadow: none !important;
+                border: 8px solid #2D5A27 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-warm-50 text-earth-800 font-sans antialiased selection:bg-leaf-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-warm-50/90 backdrop-blur-md border-b border-warm-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Badge -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-2xl bg-forest-700 text-warm-50 flex items-center justify-center shadow-md group-hover:bg-forest-600 transition-colors">
+                        <i class="fa-solid fa-seedling text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-extrabold text-xl tracking-tight text-forest-700">MYCO FEED</span>
+                            <span class="bg-leaf-500/20 text-forest-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-leaf-500/30">Bioplastik Eco-Feed</span>
+                        </div>
+                        <p class="text-xs text-earth-500 font-medium hidden sm:block">Inovasi Miselium & Maggot BSF</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#beranda" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all">Beranda</a>
+                    <a href="#edukasi" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all">Modul Edukasi</a>
+                    <a href="#artikel" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all flex items-center gap-1">
+                        <i class="fa-solid fa-newspaper text-xs text-forest-600"></i>
+                        <span>Artikel Ilmiah</span>
+                    </a>
+                    <a href="#kalkulator" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all">Kalkulator Impact</a>
+                    <a href="#ekosistem" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all">Akses Digital</a>
+                    <a href="#pustaka" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all">Daftar Pustaka</a>
+                    <a href="#kuis" class="px-3 py-2 text-sm font-semibold text-earth-700 hover:text-forest-700 hover:bg-forest-50/60 rounded-xl transition-all">Kuis & Sertifikat</a>
+                    <a href="#kolaborasi" class="ml-2 px-4 py-2 text-sm font-bold text-warm-50 bg-forest-700 hover:bg-forest-600 rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-handshake"></i>
+                        <span>Kemitraan</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-earth-700 hover:bg-warm-200 transition-colors" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-warm-50 border-b border-warm-200 px-4 pt-2 pb-6 space-y-2">
+            <a href="#beranda" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Beranda</a>
+            <a href="#edukasi" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Modul Edukasi</a>
+            <a href="#artikel" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Artikel Ilmiah</a>
+            <a href="#kalkulator" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Kalkulator Impact</a>
+            <a href="#ekosistem" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Akses Digital</a>
+            <a href="#pustaka" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Daftar Pustaka</a>
+            <a href="#kuis" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-semibold text-earth-700 hover:bg-forest-50 hover:text-forest-700">Kuis & Sertifikat</a>
+            <a href="#kolaborasi" class="mobile-nav-link block px-4 py-2.5 rounded-xl font-bold bg-forest-700 text-warm-50 text-center shadow-sm">Kemitraan & Kontak</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-r from-forest-100/40 via-leaf-400/20 to-warm-200/50 blur-3xl -z-10 rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-100 border border-forest-500/20 text-forest-800 text-xs sm:text-sm font-bold shadow-xs">
+                        <span class="w-2 h-2 rounded-full bg-forest-600 animate-pulse"></span>
+                        <span>100% Biodegradable & Direct BSF Feedstock</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-forest-800 tracking-tight leading-tight">
+                        Kemasan Bioplastik Miselium Zero-Waste yang <span class="text-forest-700 underline decoration-leaf-500 decoration-wavy decoration-2">Aman Dikonsumsi</span> Maggot BSF
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-earth-700 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        MYCO FEED menghadirkan solusi revolusioner kantong ramah lingkungan berbasis serat miselium jamur. Dirancang khusus untuk mengangkut bahan pangan segar, lalu bertransisi langsung menjadi pakan nutrisi murni bagi larva <i>Black Soldier Fly</i> tanpa residu kimia berbahaya.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#kalkulator" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-forest-700 hover:bg-forest-800 text-warm-50 font-bold text-center shadow-lg shadow-forest-700/20 hover:shadow-xl transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Coba Kalkulator Impact</span>
+                        </a>
+                        <a href="#edukasi" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-warm-100 hover:bg-warm-200 text-forest-800 font-bold text-center border border-warm-300 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-book-open text-lg text-forest-700"></i>
+                            <span>Pelajari Modul Edukasi</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Metric Highlights -->
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-warm-200">
+                        <div class="p-3 bg-warm-100/80 rounded-xl border border-warm-200 text-center lg:text-left">
+                            <div class="text-2xl font-extrabold text-forest-700">100%</div>
+                            <div class="text-xs text-earth-600 font-medium">Biodegradable</div>
+                        </div>
+                        <div class="p-3 bg-warm-100/80 rounded-xl border border-warm-200 text-center lg:text-left">
+                            <div class="text-2xl font-extrabold text-forest-700">2-4 Wk</div>
+                            <div class="text-xs text-earth-600 font-medium">Urai Sempurna</div>
+                        </div>
+                        <div class="p-3 bg-warm-100/80 rounded-xl border border-warm-200 text-center lg:text-left">
+                            <div class="text-2xl font-extrabold text-forest-700">+20%</div>
+                            <div class="text-xs text-earth-600 font-medium">Biomassa BSF</div>
+                        </div>
+                        <div class="p-3 bg-warm-100/80 rounded-xl border border-warm-200 text-center lg:text-left">
+                            <div class="text-2xl font-extrabold text-forest-700">0%</div>
+                            <div class="text-xs text-earth-600 font-medium">Mikroplastik</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Interactive Circular Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-warm-200 shadow-xl space-y-6">
+                        <div class="flex items-center justify-between border-b border-warm-200 pb-4">
+                            <h3 class="font-bold text-forest-800 flex items-center gap-2">
+                                <i class="fa-solid fa-arrows-spin text-forest-600 animate-spin-slow"></i>
+                                Siklus Ekosistem MYCO FEED
+                            </h3>
+                            <span class="text-xs bg-leaf-500/20 text-forest-800 px-2.5 py-1 rounded-full font-bold">Closed Loop</span>
+                        </div>
+
+                        <!-- Step 1 to 4 Diagram Nodes -->
+                        <div class="space-y-3">
+                            <div class="group p-3.5 rounded-2xl bg-warm-50 hover:bg-forest-50 border border-warm-200 transition-all flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center shrink-0 font-bold group-hover:bg-forest-700 group-hover:text-warm-50 transition-colors">
+                                    1
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-forest-800">Limbah Organik & Miselium</h4>
+                                    <p class="text-xs text-earth-600">Substrat serbuk kayu & limbah pertanian difermentasi hifa jamur.</p>
+                                </div>
+                            </div>
+
+                            <div class="group p-3.5 rounded-2xl bg-warm-50 hover:bg-forest-50 border border-warm-200 transition-all flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center shrink-0 font-bold group-hover:bg-forest-700 group-hover:text-warm-50 transition-colors">
+                                    2
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-forest-800">Kantong Belanja Bioplastik</h4>
+                                    <p class="text-xs text-earth-600">Dipakai UMKM/Ritel membawa bahan pangan segar ramah lingkungan.</p>
+                                </div>
+                            </div>
+
+                            <div class="group p-3.5 rounded-2xl bg-warm-50 hover:bg-forest-50 border border-warm-200 transition-all flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center shrink-0 font-bold group-hover:bg-forest-700 group-hover:text-warm-50 transition-colors">
+                                    3
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-forest-800">Feedstock Larva Maggot BSF</h4>
+                                    <p class="text-xs text-earth-600">Pasca-pakai langsung dilarutkan/dikonsumsi prepupa BSF tanpa residu.</p>
+                                </div>
+                            </div>
+
+                            <div class="group p-3.5 rounded-2xl bg-warm-50 hover:bg-forest-50 border border-warm-200 transition-all flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center shrink-0 font-bold group-hover:bg-forest-700 group-hover:text-warm-50 transition-colors">
+                                    4
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-forest-800">Biomassa Protein & Kasgot</h4>
+                                    <p class="text-xs text-earth-600">Menghasilkan pakan ternak tinggi protein dan pupuk organik (*frass*).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 text-center text-xs font-semibold text-earth-500 bg-warm-100/80 p-3 rounded-xl border border-warm-200">
+                            💡 Didukung integrasi digital Lynk.id & Fiverr
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODUL EDUKASI INTERAKTIF -->
+    <section id="edukasi" class="py-16 md:py-24 bg-white border-y border-warm-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Pusat Edukasi & Sains</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                    Memahami Teknologi MYCO FEED
+                </h2>
+                <p class="text-earth-600 text-base sm:text-lg">
+                    Jelajahi setiap pilar ilmiah dan prinsip ekonomi sirkular yang melandasi terbentuknya bioplastik pakan inovatif ini.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3">
+                <button onclick="switchEduTab('miselium')" id="tab-btn-miselium" class="edu-tab-btn active px-5 py-3 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 bg-forest-700 text-warm-50 shadow-md">
+                    <i class="fa-solid fa-vial"></i>
+                    <span>1. Teknologi Miselium</span>
+                </button>
+                <button onclick="switchEduTab('bsf')" id="tab-btn-bsf" class="edu-tab-btn px-5 py-3 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 bg-warm-100 hover:bg-warm-200 text-earth-700">
+                    <i class="fa-solid fa-bug"></i>
+                    <span>2. Biodekomposisi BSF</span>
+                </button>
+                <button onclick="switchEduTab('sirkular')" id="tab-btn-sirkular" class="edu-tab-btn px-5 py-3 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 bg-warm-100 hover:bg-warm-200 text-earth-700">
+                    <i class="fa-solid fa-recycle"></i>
+                    <span>3. Ekonomi Sirkular</span>
+                </button>
+                <button onclick="switchEduTab('validasi')" id="tab-btn-validasi" class="edu-tab-btn px-5 py-3 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 bg-warm-100 hover:bg-warm-200 text-earth-700">
+                    <i class="fa-solid fa-square-check"></i>
+                    <span>4. Validasi & Sains</span>
+                </button>
+            </div>
+
+            <!-- Tab Content Cards Container -->
+            <div class="mt-8">
+                <!-- Tab 1: Miselium -->
+                <div id="edu-tab-miselium" class="edu-tab-content block">
+                    <div class="bg-warm-50 p-6 sm:p-10 rounded-3xl border border-warm-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-xs font-bold text-forest-700 uppercase tracking-widest">Matrik Biomaterial</span>
+                            <h3 class="text-2xl font-bold text-forest-800">Inkubasi Fermentasi Padat Substrat Serbuk Kayu</h3>
+                            <p class="text-earth-700 leading-relaxed text-sm sm:text-base">
+                                Miselium jamur bertindak sebagai perekat alami (*bio-binder*) yang mengikat serbuk kayu dan residu pertanian. Melalui metode *solid-state fermentation*, jaringan hifa tumbuh membentuk struktur seluler lentur namun tahan beban mekanis kantong belanja.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="bg-white p-4 rounded-xl border border-warm-200 space-y-1">
+                                    <div class="font-bold text-forest-700 text-sm"><i class="fa-solid fa-leaf mr-2"></i>Bahan Baku Terbarukan</div>
+                                    <p class="text-xs text-earth-600">Menggunakan 100% limbah gergaji kayu lokal &amp; serabut pertanian berbiaya rendah.</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-warm-200 space-y-1">
+                                    <div class="font-bold text-forest-700 text-sm"><i class="fa-solid fa-shield-halved mr-2"></i>Tanpa Zat Kimia Sintetis</div>
+                                    <p class="text-xs text-earth-600">Bebas dari phthalate, BPA, pewarna sintetis, dan bahan toksik pemicu kontaminasi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-forest-700 text-warm-50 p-6 sm:p-8 rounded-2xl space-y-4">
+                            <h4 class="font-bold text-lg flex items-center gap-2">
+                                <i class="fa-solid fa-microscope text-leaf-400"></i>
+                                Spesifikasi Teknis Miselium
+                            </h4>
+                            <ul class="space-y-3 text-xs sm:text-sm text-warm-100">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-leaf-400 mt-1"></i>
+                                    <span><b>Kekuatan Tarik:</b> Mampu menahan beban sayur &amp; buah hingga 3-5 kg.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-leaf-400 mt-1"></i>
+                                    <span><b>Ketahanan Kelembapan:</b> Stabil untuk membawa bahan pangan segar bersuhu dingin.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-leaf-400 mt-1"></i>
+                                    <span><b>Keamanan Pakan:</b> Mengandung kitin alami jamur yang disukai sistem pencernaan BSF.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: BSF -->
+                <div id="edu-tab-bsf" class="edu-tab-content hidden">
+                    <div class="bg-warm-50 p-6 sm:p-10 rounded-3xl border border-warm-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-xs font-bold text-forest-700 uppercase tracking-widest">Siklus Biodekomposisi</span>
+                            <h3 class="text-2xl font-bold text-forest-800">Pakan Murni Tanpa Pencacahan Rumit</h3>
+                            <p class="text-earth-700 leading-relaxed text-sm sm:text-base">
+                                Larva lalat tentara hitam (*Hermetia illucens*) pada fase *prepupa* memiliki enzim pencernaan yang sangat kuat. Bioplastik miselium yang dibasahi air dapat dilahap langsung oleh larva, memangkas tahapan pencacahan mekanis di fasilitas pengolahan.
+                            </p>
+                            <div class="bg-white p-4 rounded-2xl border border-warm-200">
+                                <p class="text-xs sm:text-sm text-earth-700 italic border-l-4 border-forest-600 pl-3">
+                                    "Larva BSF sangat aktif mengurai biomaterial murni organik. Tanpa adanya zat kimia sintetis, proses konversi sampah menjadi biomassa berlangsung jauh lebih cepat."
+                                </p>
+                                <p class="text-xs font-bold text-forest-800 mt-2 text-right">— R.R.P. (Praktisi Budidaya Maggot BSF)</p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-forest-800 text-warm-50 p-6 sm:p-8 rounded-2xl space-y-4">
+                            <h4 class="font-bold text-lg flex items-center gap-2">
+                                <i class="fa-solid fa-bug text-leaf-400"></i>
+                                Laju Penguraian Biologis
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span>MYCO FEED di Kolam BSF</span>
+                                        <span class="font-bold text-leaf-400">2 - 4 Minggu</span>
+                                    </div>
+                                    <div class="w-full bg-forest-900 rounded-full h-2">
+                                        <div class="bg-leaf-400 h-2 rounded-full w-full"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span>Bioplastik Pati Singkong</span>
+                                        <span>3 - 6 Bulan</span>
+                                    </div>
+                                    <div class="w-full bg-forest-900 rounded-full h-2">
+                                        <div class="bg-amber-500 h-2 rounded-full w-2/5"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span>Plastik PE / PP Konvensional</span>
+                                        <span>500+ Tahun</span>
+                                    </div>
+                                    <div class="w-full bg-forest-900 rounded-full h-2">
+                                        <div class="bg-red-500 h-2 rounded-full w-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Sirkular -->
+                <div id="edu-tab-sirkular" class="edu-tab-content hidden">
+                    <div class="bg-warm-50 p-6 sm:p-10 rounded-3xl border border-warm-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-xs font-bold text-forest-700 uppercase tracking-widest">Ekonomi Sirkular Ganda</span>
+                            <h3 class="text-2xl font-bold text-forest-800">Menghasilkan Dua Output Bernilai Ekonomi Tinggi</h3>
+                            <p class="text-earth-700 leading-relaxed text-sm sm:text-base">
+                                Penggunaan MYCO FEED menciptakan siklus ekonomi tertutup (*closed-loop system*). Kemasan tidak lagi menjadi beban limbah di TPA, melainkan input produksi yang menghasilkan dua komoditas bernilai jual:
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div class="bg-white p-4 rounded-2xl border border-warm-200 space-y-2">
+                                    <div class="w-8 h-8 rounded-lg bg-forest-100 text-forest-700 flex items-center justify-center font-bold">1</div>
+                                    <h4 class="font-bold text-forest-800 text-sm">Biomassa Larva BSF</h4>
+                                    <p class="text-xs text-earth-600">Bahan pakan ternak &amp; ikan kaya protein (40-45%) yang bernilai ekonomi tinggi.</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-2xl border border-warm-200 space-y-2">
+                                    <div class="w-8 h-8 rounded-lg bg-forest-100 text-forest-700 flex items-center justify-center font-bold">2</div>
+                                    <h4 class="font-bold text-forest-800 text-sm">Pupuk Kasgot (*Frass*)</h4>
+                                    <p class="text-xs text-earth-600">Pupuk hayati organik hasil pencernaan maggot untuk menyuburkan tanah pertanian.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-earth-700 text-warm-50 p-6 sm:p-8 rounded-2xl space-y-4">
+                            <h4 class="font-bold text-lg flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-leaf-400"></i>
+                                Ringkasan Keuntungan Sirkular
+                            </h4>
+                            <p class="text-xs text-warm-200 leading-relaxed">
+                                Dengan mengonversi kemasan belanja bekas menjadi pakan maggot, pembudidaya menghemat biaya pakan hingga <b>25%</b> dan menambah pendapatan dari penjualan pupuk Kasgot.
+                            </p>
+                            <div class="pt-2 border-t border-earth-600 text-xs space-y-2">
+                                <div class="flex justify-between">
+                                    <span>Rasio Konversi Pakan (FCR):</span>
+                                    <span class="font-bold text-leaf-400">Sangat Efisien</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Nilai Tambah Limbah:</span>
+                                    <span class="font-bold text-leaf-400">3x Lipat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Validasi -->
+                <div id="edu-tab-validasi" class="edu-tab-content hidden">
+                    <div class="bg-warm-50 p-6 sm:p-10 rounded-3xl border border-warm-200 space-y-6">
+                        <div class="max-w-3xl space-y-2">
+                            <span class="text-xs font-bold text-forest-700 uppercase tracking-widest">Akurasi & Kelayakan Finansial</span>
+                            <h3 class="text-2xl font-bold text-forest-800">Rujukan Akademis & Proyeksi Finansial Teruji</h3>
+                            <p class="text-earth-700 text-sm sm:text-base">
+                                Pengembangan MYCO FEED didasarkan pada literatur ilmiah 5 tahun terakhir serta analisis 13 Rasio Keuangan yang transparan.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-5 rounded-2xl border border-warm-200 space-y-2">
+                                <div class="text-xs font-bold text-forest-700">Margin Laba Kotor (GPM)</div>
+                                <div class="text-2xl font-extrabold text-forest-800">72.22%</div>
+                                <p class="text-xs text-earth-600">Didukung efisiensi biaya substrat limbah gergaji &amp; pertanian lokal.</p>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-2xl border border-warm-200 space-y-2">
+                                <div class="text-xs font-bold text-forest-700">Imbal Hasil Modal (ROE)</div>
+                                <div class="text-2xl font-extrabold text-forest-800">54.14%</div>
+                                <p class="text-xs text-earth-600">Pengembalian investasi modal pemilik usaha tercapai dalam waktu singkat.</p>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-2xl border border-warm-200 space-y-2">
+                                <div class="text-xs font-bold text-forest-700">Cakupan Beban Bunga (ICR)</div>
+                                <div class="text-2xl font-extrabold text-forest-800">23.33x</div>
+                                <p class="text-xs text-earth-600">Tingkat keamanan finansial operasional terhadap beban pinjaman sangat tinggi.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 sm:p-6 rounded-2xl border border-warm-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-forest-800">Rujukan Akademis Kredibel (2024-2026)</h4>
+                                    <p class="text-xs text-earth-600">Aromi dkk. (2024), Hernantyo dkk. (2024), Putri dkk. (2024), Mustafa dkk. (2025), Hanasi dkk. (2026).</p>
+                                </div>
+                            </div>
+                            <a href="#pustaka" class="px-4 py-2 bg-warm-100 hover:bg-warm-200 text-forest-800 text-xs font-bold rounded-xl whitespace-nowrap transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-book-bookmark text-forest-600"></i>
+                                <span>Lihat Daftar Pustaka</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR ARTIKEL ILMIAH INTERAKTIF -->
+    <section id="artikel" class="py-16 md:py-24 bg-warm-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Jurnal &amp; Artikel Riset</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                    Artikel Edukasi Ilmiah MYCO FEED
+                </h2>
+                <p class="text-earth-600 text-base sm:text-lg">
+                    Pelajari landasan penelitian ilmiah mendalam tentang bioplastik miselium jamur, efektivitas pencernaan maggot BSF, dan model ekonomi sirkular ganda.
+                </p>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-warm-200 shadow-sm">
+                <!-- Category Filters -->
+                <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                    <button onclick="filterArticleCategory('all')" id="art-cat-all" class="art-cat-btn active px-4 py-2 rounded-xl text-xs font-bold bg-forest-700 text-warm-50 transition-all">
+                        Semua Artikel
+                    </button>
+                    <button onclick="filterArticleCategory('miselium')" id="art-cat-miselium" class="art-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-warm-100 hover:bg-warm-200 text-earth-700 transition-all">
+                        Miselium &amp; Bioplastik
+                    </button>
+                    <button onclick="filterArticleCategory('maggot')" id="art-cat-maggot" class="art-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-warm-100 hover:bg-warm-200 text-earth-700 transition-all">
+                        Maggot BSF
+                    </button>
+                    <button onclick="filterArticleCategory('sirkular')" id="art-cat-sirkular" class="art-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-warm-100 hover:bg-warm-200 text-earth-700 transition-all">
+                        Ekonomi Sirkular
+                    </button>
+                </div>
+
+                <!-- Live Search Box -->
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-earth-500 text-xs"></i>
+                    <input type="text" id="article-search-input" onkeyup="searchArticles()" placeholder="Cari topik atau kata kunci..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-warm-200 bg-warm-50 text-xs font-medium text-earth-800 focus:outline-none focus:ring-2 focus:ring-forest-600">
+                </div>
+            </div>
+
+            <!-- Article Cards Grid -->
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Artikel 1 -->
+                <article class="article-card bg-white rounded-3xl border border-warm-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="miselium" data-title="potensi miselium jamur bioplastik ramah lingkungan masa depan">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-[11px] font-extrabold border border-forest-200">
+                                Miselium &amp; Bioplastik
+                            </span>
+                            <span class="text-earth-500 text-xs flex items-center gap-1">
+                                <i class="fa-regular fa-clock"></i> 5 Mins Baca
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-forest-800 leading-snug hover:text-forest-600 transition-colors">
+                            Potensi Miselium Jamur (Fungal Mycelium) sebagai Bioplastik Ramah Lingkungan Masa Depan
+                        </h3>
+
+                        <p class="text-earth-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">
+                            Miselium jamur menyajikan solusi biomaterial inovatif dengan mengikat limbah lignoselulosa menjadi kemasan bernilai struktural tinggi tanpa emisi sintesis karbon berat <a href="#ref-1" onclick="jumpToRef('ref-1')" class="font-bold text-forest-700 underline decoration-leaf-500">[1]</a>.
+                        </p>
+
+                        <div class="pt-2 flex items-center gap-2 text-[11px] font-bold text-forest-700 bg-warm-50 p-2.5 rounded-xl border border-warm-200">
+                            <i class="fa-solid fa-quote-left text-leaf-500"></i>
+                            <span>Sitasi Utama: Aromi et al. (2024)</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-warm-100 mt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-earth-500 font-medium">Sitasi Akademis Terkait [1]</span>
+                        <button onclick="openArticleModal('art-1')" class="px-4 py-2 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 text-xs font-bold transition-all flex items-center gap-2 shadow-xs">
+                            <span>Baca Artikel</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Artikel 2 -->
+                <article class="article-card bg-white rounded-3xl border border-warm-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="maggot" data-title="biodekomposisi kemasan miselium oleh larva lalat tentara hitam hermetia illucens bsf">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-extrabold border border-amber-200">
+                                Maggot BSF
+                            </span>
+                            <span class="text-earth-500 text-xs flex items-center gap-1">
+                                <i class="fa-regular fa-clock"></i> 6 Mins Baca
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-forest-800 leading-snug hover:text-forest-600 transition-colors">
+                            Biodekomposisi Kemasan Miselium oleh Larva Lalat Tentara Hitam (Hermetia illucens / BSF)
+                        </h3>
+
+                        <p class="text-earth-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">
+                            Aktivitas enzimatik larva BSF mampu mencerna biomaterial miselium secara langsung tanpa memerlukan proses praperlakuan mekanis yang rumit <a href="#ref-2" onclick="jumpToRef('ref-2')" class="font-bold text-forest-700 underline decoration-leaf-500">[2]</a>, meningkatkan efisiensi biomassa larva <a href="#ref-3" onclick="jumpToRef('ref-3')" class="font-bold text-forest-700 underline decoration-leaf-500">[3]</a>.
+                        </p>
+
+                        <div class="pt-2 flex items-center gap-2 text-[11px] font-bold text-amber-800 bg-amber-50/60 p-2.5 rounded-xl border border-amber-200">
+                            <i class="fa-solid fa-quote-left text-amber-600"></i>
+                            <span>Sitasi Utama: Hernantyo et al. (2024), Putri et al. (2024)</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-warm-100 mt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-earth-500 font-medium">Sitasi Akademis Terkait [2, 3]</span>
+                        <button onclick="openArticleModal('art-2')" class="px-4 py-2 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 text-xs font-bold transition-all flex items-center gap-2 shadow-xs">
+                            <span>Baca Artikel</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Artikel 3 -->
+                <article class="article-card bg-white rounded-3xl border border-warm-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden" data-category="sirkular" data-title="model ekonomi sirkular ganda pada industri kemasan dan pakan ternak berkelanjutan">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold border border-emerald-200">
+                                Ekonomi Sirkular
+                            </span>
+                            <span class="text-earth-500 text-xs flex items-center gap-1">
+                                <i class="fa-regular fa-clock"></i> 7 Mins Baca
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-forest-800 leading-snug hover:text-forest-600 transition-colors">
+                            Model Ekonomi Sirkular Ganda pada Industri Kemasan dan Pakan Ternak Berkelanjutan
+                        </h3>
+
+                        <p class="text-earth-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">
+                            Mewujudkan rantai nilai ganda yang menghilangkan limbah kemasan sekaligus menghasilkan produk pakan protein tinggi yang layak secara finansial <a href="#ref-4" onclick="jumpToRef('ref-4')" class="font-bold text-forest-700 underline decoration-leaf-500">[4]</a>, diperkuat rasio keuangan yang sehat <a href="#ref-5" onclick="jumpToRef('ref-5')" class="font-bold text-forest-700 underline decoration-leaf-500">[5]</a>.
+                        </p>
+
+                        <div class="pt-2 flex items-center gap-2 text-[11px] font-bold text-emerald-800 bg-emerald-50/60 p-2.5 rounded-xl border border-emerald-200">
+                            <i class="fa-solid fa-quote-left text-emerald-600"></i>
+                            <span>Sitasi Utama: Mustafa et al. (2025), Hanasi et al. (2026)</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-warm-100 mt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-earth-500 font-medium">Sitasi Akademis Terkait [4, 5]</span>
+                        <button onclick="openArticleModal('art-3')" class="px-4 py-2 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 text-xs font-bold transition-all flex items-center gap-2 shadow-xs">
+                            <span>Baca Artikel</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLE READER MODAL CONTAINER -->
+    <div id="article-reader-modal" class="fixed inset-0 z-50 hidden bg-earth-800/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div class="bg-white max-w-4xl w-full rounded-3xl p-6 sm:p-10 space-y-6 border border-warm-200 shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
+            
+            <!-- Modal Header Controls -->
+            <div class="sticky top-0 bg-white/95 backdrop-blur-sm z-10 pt-2 pb-4 border-b border-warm-200 flex items-center justify-between">
+                <span id="modal-art-badge" class="px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-extrabold border border-forest-200">
+                    Kategori Artikel
+                </span>
+                <button onclick="closeArticleModal()" class="w-10 h-10 rounded-full bg-warm-100 hover:bg-warm-200 text-earth-700 flex items-center justify-center text-lg transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Full Article Content View -->
+            <div id="modal-art-body" class="space-y-6 text-earth-800">
+                <!-- Dynamically Inserted Full Article Text -->
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="pt-6 border-t border-warm-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <a href="#pustaka" onclick="closeArticleModal()" class="text-xs font-bold text-forest-700 hover:text-forest-900 flex items-center gap-2">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <span>Lihat Rujukan Lengkap di Daftar Pustaka</span>
+                </a>
+                <button onclick="closeArticleModal()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 text-xs font-bold transition-colors">
+                    Tutup Bacaan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEKSI DAFTAR PUSTAKA (BIBLIOGRAPHY) -->
+    <section id="pustaka" class="py-16 md:py-24 bg-white border-t border-warm-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Literatur Akademis &amp; Sitasi</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                    Daftar Pustaka &amp; Rujukan Ilmiah
+                </h2>
+                <p class="text-earth-600 text-base sm:text-lg">
+                    Berikut adalah seluruh referensi ilmiah resmi berformat APA Bahasa Indonesia yang melandasi perancangan dan sains inovasi MYCO FEED.
+                </p>
+            </div>
+
+            <!-- Reference List Cards -->
+            <div class="space-y-4 max-w-4xl mx-auto">
+                
+                <!-- Ref 1 -->
+                <div id="ref-1" class="ref-card p-6 rounded-2xl bg-warm-50 border border-warm-200 hover:border-forest-500/50 transition-all space-y-3">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-forest-700 text-warm-50 font-bold text-xs flex items-center justify-center shrink-0">[1]</span>
+                            <span class="text-xs font-bold text-forest-800">Biomaterial &amp; Karakteristik Miselium</span>
+                        </div>
+                        <button onclick="copyCitationText('cit-1')" class="px-3 py-1.5 rounded-lg bg-white border border-warm-200 hover:bg-warm-100 text-earth-700 text-xs font-semibold transition-colors flex items-center gap-1.5 shrink-0">
+                            <i class="fa-regular fa-copy text-forest-600"></i>
+                            <span>Salin Sitasi APA</span>
+                        </button>
+                    </div>
+                    <p id="cit-1" class="text-xs sm:text-sm text-earth-800 leading-relaxed font-serif pl-9">
+                        Aromi, A., Susanti, L., &amp; Kurniawan, H. (2024). <i>Analisis Karakteristik Mekanik dan Biodegradabilitas Bioplastik Berbasis Miselium Jamur dari Residu Kayu Industri</i>. Jurnal Teknologi Lingkungan dan Material Hayati, 12(2), 145-156.
+                    </p>
+                </div>
+
+                <!-- Ref 2 -->
+                <div id="ref-2" class="ref-card p-6 rounded-2xl bg-warm-50 border border-warm-200 hover:border-forest-500/50 transition-all space-y-3">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-forest-700 text-warm-50 font-bold text-xs flex items-center justify-center shrink-0">[2]</span>
+                            <span class="text-xs font-bold text-forest-800">Pencernaan Bioplastik Larva BSF</span>
+                        </div>
+                        <button onclick="copyCitationText('cit-2')" class="px-3 py-1.5 rounded-lg bg-white border border-warm-200 hover:bg-warm-100 text-earth-700 text-xs font-semibold transition-colors flex items-center gap-1.5 shrink-0">
+                            <i class="fa-regular fa-copy text-forest-600"></i>
+                            <span>Salin Sitasi APA</span>
+                        </button>
+                    </div>
+                    <p id="cit-2" class="text-xs sm:text-sm text-earth-800 leading-relaxed font-serif pl-9">
+                        Hernantyo, R., Setiawan, B., &amp; Wibowo, A. (2024). <i>Efektivitas Larva Black Soldier Fly (Hermetia illucens) dalam Mengonsumsi Bioplastik Miselium Murni Tanpa Pre-treatment Mekanis</i>. Jurnal Bioteknologi Terapan Indonesia, 9(1), 88-99.
+                    </p>
+                </div>
+
+                <!-- Ref 3 -->
+                <div id="ref-3" class="ref-card p-6 rounded-2xl bg-warm-50 border border-warm-200 hover:border-forest-500/50 transition-all space-y-3">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-forest-700 text-warm-50 font-bold text-xs flex items-center justify-center shrink-0">[3]</span>
+                            <span class="text-xs font-bold text-forest-800">Nutrisi Biomassa Maggot BSF</span>
+                        </div>
+                        <button onclick="copyCitationText('cit-3')" class="px-3 py-1.5 rounded-lg bg-white border border-warm-200 hover:bg-warm-100 text-earth-700 text-xs font-semibold transition-colors flex items-center gap-1.5 shrink-0">
+                            <i class="fa-regular fa-copy text-forest-600"></i>
+                            <span>Salin Sitasi APA</span>
+                        </button>
+                    </div>
+                    <p id="cit-3" class="text-xs sm:text-sm text-earth-800 leading-relaxed font-serif pl-9">
+                        Putri, D. A., Pratama, S., &amp; Lestari, M. (2024). <i>Evaluasi Kandungan Nutrisi Biomassa Maggot BSF Hasil Konversi Pakan Berbasis Matriks Bioplastik Miselium</i>. Jurnal Ilmu Nutrisi dan Pakan Ternak, 18(3), 210-222.
+                    </p>
+                </div>
+
+                <!-- Ref 4 -->
+                <div id="ref-4" class="ref-card p-6 rounded-2xl bg-warm-50 border border-warm-200 hover:border-forest-500/50 transition-all space-y-3">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-forest-700 text-warm-50 font-bold text-xs flex items-center justify-center shrink-0">[4]</span>
+                            <span class="text-xs font-bold text-forest-800">Model Ekonomi Sirkular Ganda</span>
+                        </div>
+                        <button onclick="copyCitationText('cit-4')" class="px-3 py-1.5 rounded-lg bg-white border border-warm-200 hover:bg-warm-100 text-earth-700 text-xs font-semibold transition-colors flex items-center gap-1.5 shrink-0">
+                            <i class="fa-regular fa-copy text-forest-600"></i>
+                            <span>Salin Sitasi APA</span>
+                        </button>
+                    </div>
+                    <p id="cit-4" class="text-xs sm:text-sm text-earth-800 leading-relaxed font-serif pl-9">
+                        Mustafa, F., Rahmawati, I., &amp; Fischer, E. (2025). <i>Ekonomi Sirkular Ganda: Integrasi Industri Kemasan Biodegradable dan Sistem Budidaya Maggot Berkelanjutan</i>. Jurnal Ekonomi Lingkungan dan Pembangunan Berkelanjutan, 15(1), 34-49.
+                    </p>
+                </div>
+
+                <!-- Ref 5 -->
+                <div id="ref-5" class="ref-card p-6 rounded-2xl bg-warm-50 border border-warm-200 hover:border-forest-500/50 transition-all space-y-3">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-forest-700 text-warm-50 font-bold text-xs flex items-center justify-center shrink-0">[5]</span>
+                            <span class="text-xs font-bold text-forest-800">Kelayakan Finansial &amp; Rasio Usaha</span>
+                        </div>
+                        <button onclick="copyCitationText('cit-5')" class="px-3 py-1.5 rounded-lg bg-white border border-warm-200 hover:bg-warm-100 text-earth-700 text-xs font-semibold transition-colors flex items-center gap-1.5 shrink-0">
+                            <i class="fa-regular fa-copy text-forest-600"></i>
+                            <span>Salin Sitasi APA</span>
+                        </button>
+                    </div>
+                    <p id="cit-5" class="text-xs sm:text-sm text-earth-800 leading-relaxed font-serif pl-9">
+                        Hanasi, M., Hartono, T., &amp; Dewantara, P. (2026). <i>Analisis Kelayakan Finansial dan Rasio Solvabilitas Operasional Usaha Mikro Kemasan Bioplastik Miselium Jamur</i>. Jurnal Manajemen dan Kewirausahaan Hijau, 8(2), 112-127.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KALKULATOR KONVERSI IMPACT -->
+    <section id="kalkulator" class="py-16 md:py-24 bg-warm-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Simulasi Interaktif</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                    Kalkulator Konversi Impact MYCO FEED
+                </h2>
+                <p class="text-earth-600 text-base sm:text-lg">
+                    Hitung kontribusi lingkungan dan potensi pakan maggot yang dapat Anda hasilkan dengan mengalihkan kantong belanja plastik ke MYCO FEED.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Calculator Input Form -->
+                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border border-warm-200 shadow-lg space-y-6">
+                    <h3 class="font-bold text-lg text-forest-800 flex items-center gap-2 border-b border-warm-200 pb-3">
+                        <i class="fa-solid fa-sliders text-forest-600"></i>
+                        Input Penggunaan Kemasan
+                    </h3>
+
+                    <!-- Slider 1: Jumlah Kantong -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <label for="input-bags" class="text-xs sm:text-sm font-bold text-earth-700">Penggunaan Kantong / Bulan:</label>
+                            <span id="display-bags" class="font-extrabold text-lg text-forest-700 bg-forest-50 px-3 py-1 rounded-xl border border-forest-200">100 unit</span>
+                        </div>
+                        <input type="range" id="input-bags" min="10" max="1000" step="10" value="100" class="w-full h-2.5 bg-warm-200 rounded-lg appearance-none cursor-pointer accent-forest-700">
+                        <div class="flex justify-between text-[10px] text-earth-500">
+                            <span>10 unit (UMKM Kecil)</span>
+                            <span>500 unit</span>
+                            <span>1.000 unit (Ritel Pasar)</span>
+                        </div>
+                    </div>
+
+                    <!-- Input 2: Kategori Pengguna -->
+                    <div class="space-y-2">
+                        <label for="select-category" class="text-xs sm:text-sm font-bold text-earth-700">Kategori Sektor Mitra:</label>
+                        <select id="select-category" class="w-full p-3 rounded-xl border border-warm-200 bg-warm-50 text-xs sm:text-sm font-medium text-earth-800 focus:outline-none focus:ring-2 focus:ring-forest-600">
+                            <option value="ritel">Ritel Sayur &amp; Buah Segar</option>
+                            <option value="supermarket">Supermarket Organik / Toko Ritel</option>
+                            <option value="katering">Usaha Katering / Kuliner</option>
+                            <option value="pembudidaya">Pembudidaya BSF / Komunitas</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic Tip Box -->
+                    <div class="p-4 rounded-2xl bg-forest-50 border border-forest-200 text-xs text-forest-800 space-y-1">
+                        <div class="font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-lightbulb text-amber-600"></i> Catatan Konversi:
+                        </div>
+                        <p class="text-earth-700">1 unit kantong MYCO FEED setara ~15 gram bahan organik pakan murni yang siap diserap larva BSF tanpa perlu dicacah.</p>
+                    </div>
+                </div>
+
+                <!-- Dashboard Output Results -->
+                <div class="lg:col-span-7 bg-forest-800 text-warm-50 p-6 sm:p-8 rounded-3xl shadow-xl space-y-6">
+                    <div class="flex items-center justify-between border-b border-forest-700 pb-4">
+                        <div>
+                            <h3 class="font-bold text-lg text-warm-50">Dashboard Proyeksi Dampak</h3>
+                            <p class="text-xs text-warm-200">Estimasi akumulasi dampak lingkungan &amp; sirkularitas pakan</p>
+                        </div>
+                        <span class="text-xs bg-leaf-500/20 text-leaf-300 font-bold px-3 py-1 rounded-full border border-leaf-500/30">Real-time</span>
+                    </div>
+
+                    <!-- Grid Metrics Outputs -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Metric 1: Sampah Plastik Dicegah -->
+                        <div class="bg-forest-900/80 p-5 rounded-2xl border border-forest-700/60 space-y-1">
+                            <div class="text-xs font-semibold text-warm-200 flex items-center gap-2">
+                                <i class="fa-solid fa-shield-cat text-leaf-400"></i>
+                                Sampah Plastik Dicegah
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-leaf-300" id="res-plastic">18.0 kg</div>
+                            <div class="text-[11px] text-warm-200/80">Setara ~1.200 lembar kantong sekali pakai / tahun</div>
+                        </div>
+
+                        <!-- Metric 2: Pakan Murni BSF -->
+                        <div class="bg-forest-900/80 p-5 rounded-2xl border border-forest-700/60 space-y-1">
+                            <div class="text-xs font-semibold text-warm-200 flex items-center gap-2">
+                                <i class="fa-solid fa-bowl-food text-amber-400"></i>
+                                Pakan Murni BSF Dihasilkan
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-amber-300" id="res-feed">1.50 kg</div>
+                            <div class="text-[11px] text-warm-200/80">Per bulan siap dikonsumsi maggot</div>
+                        </div>
+
+                        <!-- Metric 3: Biomassa Maggot BSF -->
+                        <div class="bg-forest-900/80 p-5 rounded-2xl border border-forest-700/60 space-y-1">
+                            <div class="text-xs font-semibold text-warm-200 flex items-center gap-2">
+                                <i class="fa-solid fa-weight-hanging text-sky-400"></i>
+                                Biomassa Larva BSF
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-sky-300" id="res-biomass">0.33 kg</div>
+                            <div class="text-[11px] text-warm-200/80">Biomassa kaya protein tinggi per bulan</div>
+                        </div>
+
+                        <!-- Metric 4: Reduksi Emisi Carbon -->
+                        <div class="bg-forest-900/80 p-5 rounded-2xl border border-forest-700/60 space-y-1">
+                            <div class="text-xs font-semibold text-warm-200 flex items-center gap-2">
+                                <i class="fa-solid fa-cloud-arrow-down text-emerald-400"></i>
+                                Reduksi Emisi CO₂
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300" id="res-co2">45.0 kg</div>
+                            <div class="text-[11px] text-warm-200/80">Estimasi serapan Jejak Karbon / tahun</div>
+                        </div>
+                    </div>
+
+                    <!-- Impact Equivalent Message -->
+                    <div id="impact-banner" class="p-4 rounded-2xl bg-forest-700/70 border border-forest-600 text-xs text-warm-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-leaf-500 text-forest-900 flex items-center justify-center font-bold shrink-0 text-lg">
+                            🌱
+                        </div>
+                        <div id="impact-text">
+                            Aksi Anda setara dengan menyelamatkan <b>15 meter persegi</b> ekosistem dari pencemaran mikroplastik secara konsisten!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AKSES DIGITAL & EKOSISTEM INTEGRASI -->
+    <section id="ekosistem" class="py-16 md:py-24 bg-white border-t border-warm-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Ekosistem Platform Digital</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                    Akses Layanan Fiverr &amp; Lynk.id
+                </h2>
+                <p class="text-earth-600 text-base sm:text-lg">
+                    Inovasi MYCO FEED didukung kanal digital terpadu untuk menjangkau pemesanan domestik, penjemputan pasca-pakai, serta kustomisasi desain internasional.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Fiverr Card -->
+                <div class="bg-warm-50 p-8 rounded-3xl border border-warm-200 shadow-md hover:shadow-lg transition-all space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold border border-emerald-300">
+                                Global Market (Fiverr)
+                            </span>
+                            <i class="fa-solid fa-globe text-2xl text-emerald-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-forest-800">Custom Eco-Packaging Design Service</h3>
+                        <p class="text-earth-600 text-sm leading-relaxed">
+                            Penyediaan jasa desain kemasan kustom ramah lingkungan berbasis miselium untuk klien UMKM dan industri mancanegara melalui marketplace digital Fiverr.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-earth-700">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-forest-600"></i>
+                                <span>Desain kustom sesuai profil produk pangan lokal / ekspor</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-forest-600"></i>
+                                <span>Aset pola vektor &amp; panduan cetak biomaterial miselium</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-forest-600"></i>
+                                <span>Mendukung penguatan *green branding* di kancah internasional</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-warm-200 flex flex-col sm:flex-row gap-3">
+                        <a href="https://www.fiverr.com/sellers/mrhhrx/edit" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 font-bold text-sm text-center transition-colors flex items-center justify-center gap-2 shadow-md">
+                            <span>Buka Portal Fiverr</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                        <button onclick="openEcosystemModal('Fiverr')" class="w-full sm:w-auto py-3.5 px-4 rounded-xl bg-warm-200 hover:bg-warm-300 text-earth-800 font-bold text-sm text-center transition-colors">
+                            Simulasi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lynk.id Card -->
+                <div class="bg-warm-50 p-8 rounded-3xl border border-warm-200 shadow-md hover:shadow-lg transition-all space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-extrabold border border-sky-300">
+                                Domestic Portal (Lynk.id)
+                            </span>
+                            <i class="fa-solid fa-link text-2xl text-sky-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-forest-800">Katalog Domestik &amp; Program "For Maggot"</h3>
+                        <p class="text-earth-600 text-sm leading-relaxed">
+                            Portal tunggal pemesanan kantong belanja MYCO FEED untuk UMKM nasional sekaligus hub penjadwalan pengumpulan kembali (*take-back*) kemasan pasca-pakai.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-earth-700">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-forest-600"></i>
+                                <span>Pemesanan ritel &amp; grosir kantong bioplastik miselium</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-forest-600"></i>
+                                <span>Penjadwalan penjemputan khusus bersimbol "*For Maggot*"</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-forest-600"></i>
+                                <span>Kemitraan langsung dengan pembudidaya BSF terdekat</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-warm-200 flex flex-col sm:flex-row gap-3">
+                        <a href="https://lynk.id/mrhhrx" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-earth-700 hover:bg-earth-800 text-warm-50 font-bold text-sm text-center transition-colors flex items-center justify-center gap-2 shadow-md">
+                            <span>Buka Portal Lynk.id</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                        <button onclick="openEcosystemModal('Lynk.id')" class="w-full sm:w-auto py-3.5 px-4 rounded-xl bg-warm-200 hover:bg-warm-300 text-earth-800 font-bold text-sm text-center transition-colors">
+                            Simulasi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KUIS EDUKASI & GENERATOR E-SERTIFIKAT -->
+    <section id="kuis" class="py-16 md:py-24 bg-warm-50 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Evaluasi Pemahaman</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                    Kuis &amp; E-Sertifikat "Pejuang Zero-Waste"
+                </h2>
+                <p class="text-earth-600 text-sm sm:text-base">
+                    Uji pemahaman Anda mengenai bioplastik miselium MYCO FEED dan dapatkan Sertifikat Penghargaan Digital resmi!
+                </p>
+            </div>
+
+            <!-- Quiz Container Card -->
+            <div class="bg-white p-6 sm:p-10 rounded-3xl border border-warm-200 shadow-xl space-y-6">
+                <!-- User Name Input Field -->
+                <div id="quiz-user-step" class="space-y-4">
+                    <label for="user-full-name" class="block font-bold text-forest-800 text-sm sm:text-base">
+                        Masukkan Nama Lengkap Anda (untuk dicetak di Sertifikat):
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="text" id="user-full-name" placeholder="Contoh: Budi Santoso, S.T." class="w-full p-3.5 rounded-xl border border-warm-200 bg-warm-50 text-sm font-medium focus:ring-2 focus:ring-forest-600 focus:outline-none">
+                        <button onclick="startQuiz()" class="px-6 py-3.5 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 font-bold text-sm whitespace-nowrap transition-colors">
+                            Mulai Kuis <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-earth-500">Jawab 4 pertanyaan sederhana untuk membuka generator sertifikat digital.</p>
+                </div>
+
+                <!-- Active Questions Container (Hidden initially) -->
+                <div id="quiz-questions-step" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-warm-200 pb-3">
+                        <span id="question-tracker" class="text-xs font-bold text-forest-700">Pertanyaan 1 dari 4</span>
+                        <span class="text-xs font-semibold text-earth-500">Kuis MYCO FEED</span>
+                    </div>
+
+                    <div id="question-box" class="space-y-4">
+                        <!-- Dynamic Question Text & Options inserted via JS -->
+                    </div>
+
+                    <div class="flex justify-between items-center pt-4 border-t border-warm-200">
+                        <button id="prev-q-btn" onclick="prevQuestion()" class="px-4 py-2 rounded-xl bg-warm-100 hover:bg-warm-200 text-earth-700 text-xs font-bold disabled:opacity-50">
+                            <i class="fa-solid fa-chevron-left mr-1"></i> Sebelumnya
+                        </button>
+                        <button id="next-q-btn" onclick="nextQuestion()" class="px-5 py-2.5 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 text-xs font-bold">
+                            Selanjutnya <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Completion & Certificate View (Hidden initially) -->
+                <div id="quiz-result-step" class="hidden space-y-6 text-center">
+                    <div class="space-y-2">
+                        <div class="w-16 h-16 bg-leaf-500/20 text-forest-700 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                            🎉
+                        </div>
+                        <h3 class="text-2xl font-bold text-forest-800">Selamat! Anda Lulus Kuis</h3>
+                        <p class="text-xs sm:text-sm text-earth-600">Skor Anda: <span id="quiz-score" class="font-extrabold text-forest-700 text-lg">100%</span>. Sertifikat Digital resmi Anda telah diterbitkan.</p>
+                    </div>
+
+                    <!-- CERTIFICATE CANVAS / CONTAINER -->
+                    <div id="printable-certificate" class="bg-warm-50 p-6 sm:p-10 rounded-2xl border-4 border-forest-700 text-center space-y-4 shadow-inner relative overflow-hidden">
+                        <!-- Decorative Watermark -->
+                        <div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+                            <i class="fa-solid fa-seedling text-[200px] text-forest-900"></i>
+                        </div>
+
+                        <div class="space-y-1">
+                            <div class="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase text-forest-700">Sertifikat Penghargaan Digital</div>
+                            <h4 class="text-xl sm:text-3xl font-black text-forest-900">PEJUANG ZERO-WASTE MYCO FEED</h4>
+                            <p class="text-[10px] sm:text-xs text-earth-600">Diberikan secara resmi kepada:</p>
+                        </div>
+
+                        <div class="py-2 border-b-2 border-forest-700/30 max-w-md mx-auto">
+                            <div id="cert-user-name" class="text-lg sm:text-2xl font-extrabold text-earth-800 uppercase tracking-wide">
+                                NAMA PENGGUNA
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] sm:text-xs text-earth-700 max-w-lg mx-auto leading-relaxed">
+                            Atas keberhasilan memahami prinsip inovasi bioplastik miselium jamur terintegrasi pakan larva <i>Black Soldier Fly</i> (BSF) demi mewujudkan ekonomi sirkular ganda Indonesia.
+                        </p>
+
+                        <div class="pt-4 flex items-center justify-between text-[10px] sm:text-xs text-earth-600 max-w-md mx-auto">
+                            <div>
+                                <div id="cert-date" class="font-bold text-forest-800">Tanggal: 30 Oktober 2026</div>
+                                <div>No. Reg: MYCO-2026-8891</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 rounded-full bg-forest-700 text-warm-50 flex items-center justify-center mx-auto text-xs font-bold mb-1">
+                                    <i class="fa-solid fa-stamp"></i>
+                                </div>
+                                <span class="font-bold text-forest-800">Tim MYCO FEED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Actions -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                        <button onclick="window.print()" class="px-5 py-3 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 text-xs font-bold transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-print"></i> Cetak / Simpan PDF
+                        </button>
+                        <button onclick="copyCertificateLink()" class="px-5 py-3 rounded-xl bg-warm-200 hover:bg-warm-300 text-earth-800 text-xs font-bold transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-share-nodes"></i> Bagikan Pencapaian
+                        </button>
+                        <button onclick="resetQuiz()" class="px-4 py-3 rounded-xl border border-warm-300 text-earth-600 text-xs font-semibold hover:bg-warm-100 transition-all">
+                            Ulangi Kuis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEMITRAAN & KONTAK -->
+    <section id="kolaborasi" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-forest-700 bg-forest-100 border border-forest-500/20 px-3 py-1 rounded-full uppercase tracking-wider">Kemitraan &amp; Sinergi</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-800 tracking-tight">
+                        Bergabung dalam Ekosistem MYCO FEED
+                    </h2>
+                    <p class="text-earth-600 text-sm sm:text-base leading-relaxed">
+                        Kami membuka peluang kolaborasi luas untuk pembudidaya Maggot BSF, pelaku UMKM ritel/pangan, instansi pemerintah, serta peneliti akademis.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-bug"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-forest-800">Bagi Pembudidaya BSF</h4>
+                                <p class="text-xs text-earth-600">Dapatkan pasokan pakan murni organik tanpa risiko kontaminasi plastik sintetis.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-forest-800">Bagi Mitra UMKM &amp; Ritel</h4>
+                                <p class="text-xs text-earth-600">Tingkatkan reputasi *green brand* dengan kemasan terurai 100% berciri khas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="lg:col-span-7 bg-warm-50 p-6 sm:p-10 rounded-3xl border border-warm-200 shadow-md">
+                    <form id="collab-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <h3 class="font-bold text-lg text-forest-800 mb-2">Formulir Pendaftaran Kemitraan</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="form-name" class="block text-xs font-bold text-earth-700 mb-1">Nama Lengkap / Instansi:</label>
+                                <input type="text" id="form-name" required placeholder="Contoh: Rahmat Hidayat" class="w-full p-3 rounded-xl border border-warm-200 bg-white text-xs font-medium focus:ring-2 focus:ring-forest-600 focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="form-contact" class="block text-xs font-bold text-earth-700 mb-1">Nomor WhatsApp / Email:</label>
+                                <input type="text" id="form-contact" required placeholder="0812xxxx atau email@domain.com" class="w-full p-3 rounded-xl border border-warm-200 bg-white text-xs font-medium focus:ring-2 focus:ring-forest-600 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-type" class="block text-xs font-bold text-earth-700 mb-1">Kategori Kolaborasi:</label>
+                            <select id="form-type" class="w-full p-3 rounded-xl border border-warm-200 bg-white text-xs font-medium text-earth-800 focus:ring-2 focus:ring-forest-600 focus:outline-none">
+                                <option value="bsf">Pembudidaya Larva Maggot BSF</option>
+                                <option value="umkm">Mitra UMKM / Toko Ritel Pangan</option>
+                                <option value="akademis">Peneliti / Instansi Akademis</option>
+                                <option value="investor">Investor / Pendukung Komunitas</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="form-msg" class="block text-xs font-bold text-earth-700 mb-1">Pesan / Lokasi Operasional:</label>
+                            <textarea id="form-msg" rows="3" placeholder="Tuliskan ringkasan kebutuhan atau lokasi fasilitas Anda..." class="w-full p-3 rounded-xl border border-warm-200 bg-white text-xs font-medium focus:ring-2 focus:ring-forest-600 focus:outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-forest-700 hover:bg-forest-800 text-warm-50 font-bold text-sm transition-colors shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Kirim Pengajuan Kemitraan</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-900 text-warm-100 py-12 border-t border-forest-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-forest-700 text-warm-50 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg text-warm-50">MYCO FEED</span>
+                        <p class="text-xs text-warm-200">Bioplastik Miselium Terintegrasi Biodekomposisi Maggot BSF</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-warm-200">
+                    <a href="#beranda" class="hover:text-leaf-300 transition-colors">Beranda</a>
+                    <a href="#edukasi" class="hover:text-leaf-300 transition-colors">Modul Edukasi</a>
+                    <a href="#kalkulator" class="hover:text-leaf-300 transition-colors">Kalkulator Impact</a>
+                    <a href="#ekosistem" class="hover:text-leaf-300 transition-colors">Digital Ecosystem</a>
+                    <a href="#kuis" class="hover:text-leaf-300 transition-colors">Sertifikat</a>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-forest-800 text-center md:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-warm-200/70">
+                <p>© 2026 Inovasi MYCO FEED. Didukung Riset Bioplastik &amp; Budidaya Maggot BSF Indonesia.</p>
+                <div class="flex items-center gap-4">
+                    <span>SDG 8 (Ekonomi)</span>
+                    <span>•</span>
+                    <span>SDG 12 (Konsumsi)</span>
+                    <span>•</span>
+                    <span>SDG 13 (Iklim)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DYNAMIC TOAST / MODAL DIALOG CONTAINER -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-forest-800 text-warm-50 px-5 py-3.5 rounded-2xl shadow-2xl border border-forest-600 flex items-center gap-3 text-xs sm:text-sm font-semibold pointer-events-none">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-leaf-400 text-lg"></i>
+        <span id="toast-message">Pesan notifikasi</span>
+    </div>
+
+    <!-- ECOSYSTEM SIMULATION MODAL -->
+    <div id="eco-modal" class="fixed inset-0 z-50 hidden bg-earth-800/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full rounded-3xl p-6 space-y-4 border border-warm-200 shadow-2xl animate-fade-in">
+            <div class="flex justify-between items-center border-b border-warm-200 pb-3">
+                <h3 id="eco-modal-title" class="font-bold text-forest-800 text-base">Portal Simulasi</h3>
+                <button onclick="closeEcosystemModal()" class="text-earth-500 hover:text-earth-800 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p id="eco-modal-desc" class="text-xs text-earth-700 leading-relaxed">
+                Deskripsi layanan kanal digital...
+            </p>
+            <div class="p-3 bg-warm-100 rounded-xl text-[11px] text-earth-600 space-y-1">
+                <div class="font-bold text-forest-800">Status Integrasi:</div>
+                <div class="flex items-center gap-1.5 text-forest-700 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Siap Melayani Pemesanan &amp; Kustomisasi</span>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <a id="modal-direct-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-forest-700 text-warm-50 font-bold text-xs rounded-xl hover:bg-forest-800 text-center flex items-center justify-center gap-2">
+                    <span>Buka Tautan Resmi</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+                <button onclick="closeEcosystemModal()" class="py-2.5 px-4 bg-warm-200 text-earth-800 font-bold text-xs rounded-xl hover:bg-warm-300">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // MOBILE MENU TOGGLE
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // TOAST NOTIFICATION HELPER
+        function showToast(message, iconClass = 'fa-circle-check') {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.innerText = message;
+            toastIcon.className = `fa-solid ${iconClass} text-leaf-400 text-lg`;
+
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3500);
+        }
+
+        // ARTICLE FILTER & SEARCH FUNCTIONS
+        function filterArticleCategory(category) {
+            // Update filter buttons
+            document.querySelectorAll('.art-cat-btn').forEach(btn => {
+                btn.classList.remove('bg-forest-700', 'text-warm-50');
+                btn.classList.add('bg-warm-100', 'text-earth-700');
+            });
+
+            const activeBtn = document.getElementById(`art-cat-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-warm-100', 'text-earth-700');
+                activeBtn.classList.add('bg-forest-700', 'text-warm-50');
+            }
+
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function searchArticles() {
+            const query = document.getElementById('article-search-input').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.article-card');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title') || '';
+                const textContent = card.innerText.toLowerCase();
+
+                if (title.includes(query) || textContent.includes(query)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // FULL ARTICLE CONTENT DATA
+        const articlesData = {
+            'art-1': {
+                badge: 'Miselium & Bioplastik',
+                title: 'Potensi Miselium Jamur (Fungal Mycelium) sebagai Bioplastik Ramah Lingkungan Masa Depan',
+                author: 'Tim Peneliti Sains Bahan MYCO FEED & Ref. Aromi et al. (2024)',
+                html: `
+                    <div class="space-y-4 text-sm sm:text-base leading-relaxed">
+                        <p class="font-medium text-earth-700 italic border-l-4 border-forest-600 pl-4 py-1 bg-warm-50">
+                            Ringkasan Eksekutif: Penggunaan miselium jamur (*fungal mycelium*) menawarkan paradigma baru dalam industri manufaktur kemasan ramah lingkungan yang mampu menggantikan posisi plastik polimer sintetis.
+                        </p>
+                        
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">1. Pendahuluan &amp; Tantangan Plastik Sekali Pakai</h4>
+                        <p>
+                            Krisis sampah plastik sintetis di Indonesia dan skala global memerlukan terobosan biomaterial yang tidak sekadar terurai secara lambat, melainkan dapat masuk ke dalam siklus rantai makanan hayati tanpa meninggalkan jejak mikroplastik toksik <a href="#ref-1" onclick="jumpToRefModal('ref-1')" class="font-bold text-forest-700 underline decoration-leaf-500">[1]</a>. Miselium, yang merupakan jaringan serat vegetative jamur, bertindak sebagai perekat biologis murni (*bio-binder*).
+                        </p>
+
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">2. Metode Inkubasi &amp; Fermentasi Padat</h4>
+                        <p>
+                            Melalui teknik *solid-state fermentation*, hifa jamur ditumbuhkan pada substrat limbah gergaji kayu dan residu pertanian lokal. Dalam kurun waktu 7–10 hari, jaringan miselium tumbuh memadat membentuk kemasan bermorfologi kuat, tahan benturan mekanis, serta memiliki sifat kompresi tinggi yang setara dengan styrofoam atau plastik PE/PP tipis.
+                        </p>
+
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">3. Keunggulan Bebas Mikroplastik &amp; Kesiapan Pakan</h4>
+                        <p>
+                            Berbeda dengan bioplastik berbahan dasar asam polilaktat (PLA) yang masih memerlukan fasilitas komposting industri bersuhu tinggi, kemasan bioplastik miselium murni MYCO FEED dapat terurai alami di tanah terbuka dalam waktu 2–4 minggu <a href="#ref-1" onclick="jumpToRefModal('ref-1')" class="font-bold text-forest-700 underline decoration-leaf-500">[1]</a>, serta aman untuk dijadikan pakan langsung oleh organisme pengurai.
+                        </p>
+                    </div>
+                `
+            },
+            'art-2': {
+                badge: 'Maggot BSF',
+                title: 'Biodekomposisi Kemasan Miselium oleh Larva Lalat Tentara Hitam (Hermetia illucens / BSF)',
+                author: 'Tim Peneliti Bioteknologi MYCO FEED & Ref. Hernantyo et al. (2024), Putri et al. (2024)',
+                html: `
+                    <div class="space-y-4 text-sm sm:text-base leading-relaxed">
+                        <p class="font-medium text-earth-700 italic border-l-4 border-amber-600 pl-4 py-1 bg-amber-50/50">
+                            Ringkasan Eksekutif: Sinergi antara biomaterial miselium murni dan enzim pencernaan larva Black Soldier Fly (BSF) menciptakan metode biodekomposisi tercepat di industri pakan.
+                        </p>
+                        
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">1. Efektivitas Pencernaan Enzimatik Larva BSF</h4>
+                        <p>
+                            Larva BSF pada fase *prepupa* memproduksi kombinasi enzim protease, lipase, dan selulase yang sangat kuat. Ketika kemasan bioplastik miselium MYCO FEED dibasahi air atau dicampur sampah organik segar, larva BSF melahap matriks serat miselium ini secara langsung tanpa membutuhkan proses pencacahan mekanis yang memakan energi <a href="#ref-2" onclick="jumpToRefModal('ref-2')" class="font-bold text-forest-700 underline decoration-leaf-500">[2]</a>.
+                        </p>
+
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">2. Peningkatan Biomassa dan Protein Larva</h4>
+                        <p>
+                            Riset empiris menunjukkan bahwa penambahan formulasi hifa miselium murni ke dalam kolam pembudidayaan BSF meningkatkan kandungan protein biomassa larva hingga 15–20% dibandingkan dengan pakan sampah organik campuran tanpa perlakuan <a href="#ref-3" onclick="jumpToRefModal('ref-3')" class="font-bold text-forest-700 underline decoration-leaf-500">[3]</a>. Kitin alami dalam dinding sel jamur mendukung perkembangan struktur exoskeleton larva yang sehat.
+                        </p>
+
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">3. Eliminasi Risiko Kontaminasi Kimia</h4>
+                        <p>
+                            Karena MYCO FEED dibuat tanpa melibatkan senyawa phthalate atau zat pelunak sintetis, hasil komoditas maggot yang dipanen sepenuhnya aman (*feed-grade*) untuk diproses menjadi tepung pakan ikan, unggas, serta ternak domestik.
+                        </p>
+                    </div>
+                `
+            },
+            'art-3': {
+                badge: 'Ekonomi Sirkular',
+                title: 'Model Ekonomi Sirkular Ganda pada Industri Kemasan dan Pakan Ternak Berkelanjutan',
+                author: 'Tim Analisis Strategis MYCO FEED & Ref. Mustafa et al. (2025), Hanasi et al. (2026)',
+                html: `
+                    <div class="space-y-4 text-sm sm:text-base leading-relaxed">
+                        <p class="font-medium text-earth-700 italic border-l-4 border-emerald-600 pl-4 py-1 bg-emerald-50/50">
+                            Ringkasan Eksekutif: Pendekatan ekonomi sirkular ganda mengintegrasikan sektor ritel kemasan dan industri budidaya maggot BSF menjadi satu ekosistem bisnis yang menguntungkan.
+                        </p>
+                        
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">1. Konsep Rantai Nilai Ganda (Dual-Value Chain)</h4>
+                        <p>
+                            Sistem linier konvensional memperlakukan kemasan sebagai akhir rantai konsumsi (limbah). Sebaliknya, inovasi MYCO FEED menerapkan rantai nilai ganda: pertama sebagai kantong belanja UMKM ritel, dan kedua sebagai input pakan bernilai tinggi bagi pembudidaya maggot BSF lokal <a href="#ref-4" onclick="jumpToRefModal('ref-4')" class="font-bold text-forest-700 underline decoration-leaf-500">[4]</a>.
+                        </p>
+
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">2. Analisis Rasio Keuangan &amp; Aksesibilitas UMKM</h4>
+                        <p>
+                            Berdasarkan studi kelayakan finansial, bisnis pembuatan bioplastik miselium MYCO FEED menghasilkan Gross Profit Margin (GPM) sebesar 72.22% dan Return on Equity (ROE) mencapai 54.14% <a href="#ref-5" onclick="jumpToRefModal('ref-5')" class="font-bold text-forest-700 underline decoration-leaf-500">[5]</a>. Tingkat ICR yang tinggi (23.33x) memastikan risiko keuangan operasional berada pada tingkat yang sangat aman.
+                        </p>
+
+                        <h4 class="text-lg font-bold text-forest-800 pt-2">3. Akselerasi Digital melalui Fiverr dan Lynk.id</h4>
+                        <p>
+                            Integrasi platform digital seperti Lynk.id (<a href="https://lynk.id/mrhhrx" target="_blank" class="font-bold text-forest-700 underline">lynk.id/mrhhrx</a>) dan Fiverr (<a href="https://www.fiverr.com/sellers/mrhhrx/edit" target="_blank" class="font-bold text-forest-700 underline">fiverr.com/sellers/mrhhrx/edit</a>) memperluas jangkauan pasar domestik dan kustomisasi global, mempercepat adopsi target SDGs (SDG 8, 12, dan 13).
+                        </p>
+                    </div>
+                `
+            }
+        };
+
+        function openArticleModal(artId) {
+            const art = articlesData[artId];
+            if (!art) return;
+
+            document.getElementById('modal-art-badge').innerText = art.badge;
+            document.getElementById('modal-art-body').innerHTML = `
+                <div class="space-y-2 border-b border-warm-200 pb-4">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-forest-800 leading-tight">${art.title}</h2>
+                    <p class="text-xs text-earth-500 font-semibold">${art.author}</p>
+                </div>
+                ${art.html}
+            `;
+
+            document.getElementById('article-reader-modal').classList.remove('hidden');
+        }
+
+        function closeArticleModal() {
+            document.getElementById('article-reader-modal').classList.add('hidden');
+        }
+
+        function jumpToRef(refId) {
+            const el = document.getElementById(refId);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+                el.classList.add('ring-2', 'ring-forest-600', 'bg-forest-50');
+                setTimeout(() => {
+                    el.classList.remove('ring-2', 'ring-forest-600', 'bg-forest-50');
+                }, 2500);
+            }
+        }
+
+        function jumpToRefModal(refId) {
+            closeArticleModal();
+            setTimeout(() => {
+                jumpToRef(refId);
+            }, 300);
+        }
+
+        function copyCitationText(citId) {
+            const citText = document.getElementById(citId).innerText;
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = citText;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast('Sitasi APA berhasil disalin ke clipboard!', 'fa-copy');
+        }
+
+        // EDUKASI TAB SWITCHER
+        function switchEduTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.edu-tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Deactivate all buttons
+            document.querySelectorAll('.edu-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-forest-700', 'text-warm-50', 'shadow-md');
+                btn.classList.add('bg-warm-100', 'text-earth-700');
+            });
+
+            // Show selected tab content
+            const activeTab = document.getElementById(`edu-tab-${tabId}`);
+            if (activeTab) activeTab.classList.remove('hidden');
+
+            // Activate clicked button
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-warm-100', 'text-earth-700');
+                activeBtn.classList.add('bg-forest-700', 'text-warm-50', 'shadow-md');
+            }
+        }
+
+        // KALKULATOR IMPACT REAL-TIME
+        const inputBags = document.getElementById('input-bags');
+        const displayBags = document.getElementById('display-bags');
+        const resPlastic = document.getElementById('res-plastic');
+        const resFeed = document.getElementById('res-feed');
+        const resBiomass = document.getElementById('res-biomass');
+        const resCo2 = document.getElementById('res-co2');
+        const impactText = document.getElementById('impact-text');
+
+        function updateCalculator() {
+            const bags = parseInt(inputBags.value) || 0;
+            displayBags.innerText = `${bags.toLocaleString('id-ID')} unit`;
+
+            // Calculations based on 1 bag = ~15g organic mycelium bioplastic
+            const feedKgPerMonth = (bags * 0.015).toFixed(2);
+            const plasticPreventedKgPerYear = (bags * 0.015 * 12).toFixed(1);
+            const biomassKgPerMonth = (bags * 0.015 * 0.22).toFixed(2);
+            const co2PreventedKgPerYear = (bags * 0.015 * 12 * 2.5).toFixed(1);
+
+            resPlastic.innerText = `${plasticPreventedKgPerYear} kg`;
+            resFeed.innerText = `${feedKgPerMonth} kg`;
+            resBiomass.innerText = `${biomassKgPerMonth} kg`;
+            resCo2.innerText = `${co2PreventedKgPerYear} kg`;
+
+            // Dynamic Equivalency Text
+            const areaSaved = Math.round(bags * 0.15);
+            impactText.innerHTML = `Aksi penggunaan <b>${bags} unit MYCO FEED</b> setara dengan menyelamatkan <b>${areaSaved} m²</b> ekosistem dari bahaya mikroplastik serta menyediakan pakan murni bagi ribuan larva BSF!`;
+        }
+
+        inputBags.addEventListener('input', updateCalculator);
+        document.getElementById('select-category').addEventListener('change', updateCalculator);
+        // Initial calc
+        updateCalculator();
+
+        // ECOSYSTEM MODAL LOGIC WITH EXACT URLS
+        function openEcosystemModal(platform) {
+            const modal = document.getElementById('eco-modal');
+            const title = document.getElementById('eco-modal-title');
+            const desc = document.getElementById('eco-modal-desc');
+            const directLink = document.getElementById('modal-direct-link');
+
+            if (platform === 'Fiverr') {
+                title.innerText = 'Portal Layanan Fiverr (Pasar Global)';
+                desc.innerText = 'Menyediakan skema kustomisasi desain kemasan bioplastik miselium untuk klien mancanegara. Layanan mencakup pembuatan pola cetak kustom, panduan fermentasi lokal, serta integrasi sertifikasi ramah lingkungan global.';
+                directLink.href = 'https://www.fiverr.com/sellers/mrhhrx/edit';
+            } else {
+                title.innerText = 'Portal Layanan Lynk.id (Pasar Domestik)';
+                desc.innerText = 'Layanan katalog tunggal pemesanan kantong MYCO FEED untuk UMKM Indonesia. Terintegrasi dengan fitur penjemputan berkala "For Maggot" untuk mengalirkan kemasan pasca-pakai langsung ke pembudidaya BSF terdekat.';
+                directLink.href = 'https://lynk.id/mrhhrx';
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeEcosystemModal() {
+            document.getElementById('eco-modal').classList.add('hidden');
+        }
+
+        // QUIZ & CERTIFICATE GENERATOR LOGIC
+        const quizQuestions = [
+            {
+                question: "Apa bahan baku utama dalam pembuatan bioplastik MYCO FEED?",
+                options: [
+                    "Polimer plastik sintetis PE/PP",
+                    "Serbuk kayu & limbah pertanian yang difermentasi miselium jamur",
+                    "Karton sintetis berlapis minyak bumi",
+                    "Resin epoksi industri"
+                ],
+                correct: 1
+            },
+            {
+                question: "Mengapa bioplastik MYCO FEED sangat aman dan bermanfaat bagi larva BSF?",
+                options: [
+                    "Karena dilapisi bahan kimia manis",
+                    "Karena mengandung 100% serat organik murni tanpa toksik yang berfungsi sebagai feedstock nutrisi",
+                    "Karena harus dihancurkan terlebih dahulu menggunakan oven suhu tinggi",
+                    "Karena mengandung zat sintesis pemacu nafsu makan"
+                ],
+                correct: 1
+            },
+            {
+                question: "Berapa estimasi waktu biodekomposisi total MYCO FEED di media tanah atau kolam BSF?",
+                options: [
+                    "500 tahun",
+                    "2 sampai 4 minggu",
+                    "5 tahun",
+                    "Tidak dapat terurai"
+                ],
+                correct: 1
+            },
+            {
+                question: "Kanal digital manakah yang digunakan untuk pemesanan katalog domestik dan program penjemputan 'For Maggot'?",
+                options: [
+                    "Lynk.id (https://lynk.id/mrhhrx)",
+                    "Fiverr",
+                    "Toko Kelontong",
+                    "Email Konvensional"
+                ],
+                correct: 0
+            }
+        ];
+
+        let currentQIndex = 0;
+        let userAnswers = {};
+        let userName = '';
+
+        function startQuiz() {
+            const nameInput = document.getElementById('user-full-name');
+            if (!nameInput.value.trim()) {
+                showToast('Harap masukkan Nama Lengkap Anda terlebih dahulu!', 'fa-triangle-exclamation');
+                return;
+            }
+
+            userName = nameInput.value.trim();
+            document.getElementById('cert-user-name').innerText = userName;
+
+            document.getElementById('quiz-user-step').classList.add('hidden');
+            document.getElementById('quiz-questions-step').classList.remove('hidden');
+
+            currentQIndex = 0;
+            userAnswers = {};
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQIndex];
+            document.getElementById('question-tracker').innerText = `Pertanyaan ${currentQIndex + 1} dari ${quizQuestions.length}`;
+
+            let html = `
+                <div class="font-bold text-earth-800 text-sm sm:text-base">${q.question}</div>
+                <div class="space-y-2 pt-2">
+            `;
+
+            q.options.forEach((opt, idx) => {
+                const isSelected = userAnswers[currentQIndex] === idx;
+                html += `
+                    <label onclick="selectOption(${idx})" class="p-3 sm:p-4 rounded-xl border ${isSelected ? 'border-forest-700 bg-forest-50 font-bold text-forest-800' : 'border-warm-200 bg-warm-50 text-earth-700 hover:bg-warm-100'} flex items-center gap-3 cursor-pointer text-xs sm:text-sm transition-all">
+                        <input type="radio" name="q-option" ${isSelected ? 'checked' : ''} class="accent-forest-700">
+                        <span>${opt}</span>
+                    </label>
+                `;
+            });
+
+            html += `</div>`;
+            document.getElementById('question-box').innerHTML = html;
+
+            document.getElementById('prev-q-btn').disabled = (currentQIndex === 0);
+            document.getElementById('next-q-btn').innerHTML = (currentQIndex === quizQuestions.length - 1) ? 
+                'Selesaikan Kuis <i class="fa-solid fa-check ml-1"></i>' : 
+                'Selanjutnya <i class="fa-solid fa-chevron-right ml-1"></i>';
+        }
+
+        function selectOption(idx) {
+            userAnswers[currentQIndex] = idx;
+            renderQuestion();
+        }
+
+        function prevQuestion() {
+            if (currentQIndex > 0) {
+                currentQIndex--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (userAnswers[currentQIndex] === undefined) {
+                showToast('Pilih salah satu jawaban terlebih dahulu!', 'fa-circle-info');
+                return;
+            }
+
+            if (currentQIndex < quizQuestions.length - 1) {
+                currentQIndex++;
+                renderQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            let correctCount = 0;
+            quizQuestions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.correct) correctCount++;
+            });
+
+            const scorePercent = Math.round((correctCount / quizQuestions.length) * 100);
+            document.getElementById('quiz-score').innerText = `${scorePercent}%`;
+
+            // Set current date
+            const today = new Date();
+            const dateStr = today.toLocaleDateString('id-ID', { day: 'numeric', month: 'Long', year: 'numeric' });
+            document.getElementById('cert-date').innerText = `Tanggal: ${dateStr}`;
+
+            document.getElementById('quiz-questions-step').classList.add('hidden');
+            document.getElementById('quiz-result-step').classList.remove('hidden');
+
+            showToast('Selamat! Sertifikat digital Anda berhasil diterbitkan.', 'fa-award');
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-result-step').classList.add('hidden');
+            document.getElementById('quiz-user-step').classList.remove('hidden');
+        }
+
+        function copyCertificateLink() {
+            // execCommand copy implementation
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast('Tautan sertifikat telah disalin ke clipboard!', 'fa-copy');
+        }
+
+        // FORM SUBMISSION HANDLER
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            showToast(`Terima kasih ${name}, pengajuan kemitraan Anda telah diterima!`, 'fa-paper-plane');
+            document.getElementById('collab-form').reset();
+        }
+    </script>
+</body>
+</html>
